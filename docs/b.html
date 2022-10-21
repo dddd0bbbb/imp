@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="https://www.jq22.com/jquery/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+            var host = 'localhost';
+            var port = 8888;
+            var url = 'ws://' + host + ':' + port + '/';
+            var w = new WebSocket(url);
+
+            w.onmessage = function (e) {
+                $("#canvas").attr("src", e.data);
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <img  id="canvas" width="320" height="320" /> 
+</body>
+</html>
